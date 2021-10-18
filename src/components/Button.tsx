@@ -1,5 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {windowWidth} from '../configs/dimentions';
+import colors from '../configs/colors';
 
 type TButtonProps = {
   title: string | string[];
@@ -27,13 +29,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
-    width: 100,
+    width: windowWidth * 0.3,
     borderRadius: 25,
-    borderColor: 'grey',
+    borderColor: colors.grey,
     borderWidth: 1,
     height: 50,
     marginTop: 15,
-    backgroundColor: '#5B5B5B',
+    backgroundColor: colors.secondaryColor,
   },
   text: {
     fontSize: 16,

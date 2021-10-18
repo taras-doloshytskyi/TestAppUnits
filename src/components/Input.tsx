@@ -6,6 +6,8 @@ import {
   View,
   KeyboardTypeOptions,
 } from 'react-native';
+import {windowWidth} from '../configs/dimentions';
+import colors from '../configs/colors';
 
 type TInputProps = {
   onChangeText: (e: string | number) => void;
@@ -17,7 +19,6 @@ type TInputProps = {
   keyboardType?: KeyboardTypeOptions;
   inputLabel?: string;
 };
-import {windowWidth} from '../configs/dimentions';
 
 const Input: React.FC<TInputProps> = props => {
   const {
@@ -53,20 +54,19 @@ const Input: React.FC<TInputProps> = props => {
 
 const styles = StyleSheet.create({
   inputContainer: {
-    backgroundColor: '#fff',
-    width: '100%',
+    width: windowWidth,
     height: 80,
     paddingVertical: 10,
     paddingHorizontal: 10,
-    backgroundColor: '#9E9998',
+    backgroundColor: colors.mainColor,
   },
   input: {
     fontSize: 16,
-    color: 'black',
+    color: colors.black,
     paddingLeft: 10,
     height: 40,
     borderWidth: 1,
-    borderColor: 'grey',
+    borderColor: colors.grey,
     borderRadius: 25,
     width: windowWidth - 50,
   },

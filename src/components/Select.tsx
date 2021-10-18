@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
+import colors from '../configs/colors';
 
 type TSelectProps = {
   items: any;
@@ -27,9 +28,9 @@ const pickerSelectStyles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 10,
     borderWidth: 1,
-    borderColor: 'gray',
+    borderColor: colors.grey,
     borderRadius: 15,
-    color: 'black',
+    color: colors.black,
     marginTop: 30,
     width: 'auto',
     justifyContent: 'center',
@@ -40,9 +41,9 @@ const pickerSelectStyles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 10,
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: colors.black,
     borderRadius: 15,
-    color: 'black',
+    color: colors.black,
     marginTop: 30,
     width: 140,
     justifyContent: 'center',

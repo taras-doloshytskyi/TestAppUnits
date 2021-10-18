@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
-import {View, SafeAreaView} from 'react-native';
-import styles from './MainScreen.styles';
+import {View, SafeAreaView, StyleSheet} from 'react-native';
 import Input from '../components/Input';
 import Select from '../components/Select';
 import CustomButton from '../components/Button';
@@ -9,6 +8,9 @@ import {bindActionCreators} from 'redux';
 import * as action from '../store/actions/main';
 import {connect} from 'react-redux';
 import {StateProps} from '../store/types/main';
+import {heightConfig, weightConfig} from '../configs/unitConfigs';
+import {windowWidth} from '../configs/dimentions';
+import colors from '../configs/colors';
 
 interface IProps {
   weight: number;
@@ -29,9 +31,6 @@ const MainScreen = ({weight, actions, height, units}: IProps) => {
   };
 
   const unitChange = (newUnit: string) => {
-    console.log(newUnit);
-    const weightConfig = 2.2046;
-    const heightConfig = 3.2808;
     if (newUnit !== units) {
       if (newUnit === 'imperial') {
         actions.setHeight(height * heightConfig);
@@ -93,3 +92,18 @@ export default connect(
     actions: bindActionCreators(action, dispatch),
   }),
 )(MainScreen);
+
+const styles = StyleSheet.create({
+  safeStyle: {
+    backgroundColor: colors.mainColor,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: windowWidth,
+    height: '100%',
+  },
+  infoContStyle: {
+    width: windowWidth,
+    backgroundColor: colors.mainColor,
+    alignSelf: 'center',
+  },
+});
